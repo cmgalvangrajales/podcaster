@@ -25,6 +25,7 @@ module.exports = {
     '^axios$': require.resolve('axios'),
     '^.+\\.module\\.(css|less)$': 'identity-obj-proxy',
     '\\.(jpg|jpeg|png|gif|eot|otf|webp|svg|ttf|woff|woff2|mp4|wav|mp3|m4a|aac|oga)$': '<rootDir>/src/__mocks__/fileMock.js',
+    '@src/(.*)': '<rootDir>/src/$1',
     '@root/(.*)': '<rootDir>/$1',
     '@config/(.*)': '<rootDir>/config/$1',
     '@pages/(.*)': '<rootDir>/src/pages/$1',

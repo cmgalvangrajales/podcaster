@@ -41,6 +41,7 @@ export interface AppThemeInterface {
       lineHeight: string;
       letterSpacing: string;
       fontWeight?: string;
+      color?: string;
     };
   };
   button: {

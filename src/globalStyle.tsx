@@ -1,5 +1,4 @@
 import { Global, css } from '@emotion/react';
-import 'tailwindcss/tailwind.css';
 
 const globalStyle = () => (
   <Global
