@@ -1,3 +1,3 @@
-import ComingSoon from '@containers/ComingSoon';
+import App from '@containers/App';
 
-export default ComingSoon;
+export default App;
