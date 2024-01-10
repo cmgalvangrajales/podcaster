@@ -28,7 +28,9 @@ export const theme: AppThemeInterface = {
     desktop: '(min-width: 2560px)',
   },
   palette: {
-    gray900: '#1a202c',
+    gray900: '#111827',
+    primary: '#4b8ec7',
+    blue400: '#60a5fa',
   },
   typography: {
     Base225: {
@@ -37,6 +39,13 @@ export const theme: AppThemeInterface = {
       lineHeight: '2.5rem',
       letterSpacing: 'normal',
       fontWeight: '600',
+    },
+    Base112: {
+      fontFamily: 'Source Sans Pro Bold',
+      fontSize: '1.2rem',
+      lineHeight: '1,5rem',
+      letterSpacing: 'normal',
+      fontWeight: '400',
     },
   },
   button: {},

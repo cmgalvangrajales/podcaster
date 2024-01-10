@@ -1,17 +1,12 @@
 /** @type {import('tailwindcss').Config} */
+import { theme } from './src/contexts/ThemeContext/ThemeContext.theme';
 
 export default {
   content: ['./index.html', './src/**/*.{js,ts,jsx,tsx}'],
   theme: {
     extend: {
-      colors: {
-        primary: '#4b8ec7',
-      },
+      colors: { ...theme.palette },
     },
   },
   plugins: [],
 };
-
-/* colors: {
-  'blue-custom': '#4b8ec7',
-}, */
