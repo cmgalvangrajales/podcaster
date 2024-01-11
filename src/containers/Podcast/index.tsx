@@ -1,4 +1,9 @@
-const Podcast = () => {
+interface PodcastInterface {
+  setIsLoading: (isLoading: boolean) => void;
+}
+
+// eslint-disable-next-line @typescript-eslint/no-unused-vars
+const Podcast = ({ setIsLoading }: PodcastInterface): JSX.Element => {
   return <div>Future content goes here</div>;
 };
 

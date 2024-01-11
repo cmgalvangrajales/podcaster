@@ -1,4 +1,5 @@
-import { Route, Routes } from 'react-router-dom';
+import { useEffect, useState } from 'react';
+import { Route, Routes, useLocation } from 'react-router-dom';
 import 'tailwindcss/tailwind.css';
 
 import NotFound from '@pages/404';
@@ -9,14 +10,22 @@ import Podcast from '@pages/Podcast';
 import { Content, Header } from '@components/layout';
 
 const App = () => {
+  const [isLoading, setIsLoading] = useState(true);
+  const location = useLocation();
+
+  useEffect(() => {
+    // execute on location change
+    setIsLoading(false);
+  }, [location]);
+
   return (
     <div className="overflow-hidden grid h-screen grid-rows-[auto_1fr]">
-      <Header />
+      <Header isLoading={isLoading} setIsLoading={setIsLoading} />
       <Content>
         <Routes>
-          <Route path="/" element={<HomePage />} />
-          <Route path="/podcast/:podcastId" element={<Podcast />} />
-          <Route path="/podcast/:podcastId/episode/:episodeId" element={<Episode />} />
+          <Route path="/" element={<HomePage setIsLoading={setIsLoading} />} />
+          <Route path="/podcast/:podcastId" element={<Podcast setIsLoading={setIsLoading} />} />
+          <Route path="/podcast/:podcastId/episode/:episodeId" element={<Episode setIsLoading={setIsLoading} />} />
           <Route path="*" element={<NotFound />} />
         </Routes>
       </Content>
