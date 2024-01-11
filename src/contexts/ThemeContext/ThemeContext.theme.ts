@@ -29,6 +29,8 @@ export const theme: AppThemeInterface = {
   },
   palette: {
     gray900: '#111827',
+    gray400: '#9ca3af',
+    gray500: '#6b7280',
     primary: '#4b8ec7',
     blue400: '#60a5fa',
   },
@@ -43,7 +45,21 @@ export const theme: AppThemeInterface = {
     Base112: {
       fontFamily: 'Source Sans Pro Bold',
       fontSize: '1.2rem',
-      lineHeight: '1,5rem',
+      lineHeight: '1.5rem',
+      letterSpacing: 'normal',
+      fontWeight: '400',
+    },
+    Base110: {
+      fontFamily: 'Source Sans Pro Bold',
+      fontSize: '1rem',
+      lineHeight: '1rem',
+      letterSpacing: 'normal',
+      fontWeight: '400',
+    },
+    Base108: {
+      fontFamily: 'Source Sans Pro Bold',
+      fontSize: '0.8rem',
+      lineHeight: '1rem',
       letterSpacing: 'normal',
       fontWeight: '400',
     },
