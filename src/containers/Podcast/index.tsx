@@ -1,6 +1,6 @@
-interface PodcastInterface {
+type PodcastInterface = {
   setIsLoading: (isLoading: boolean) => void;
-}
+};
 
 // eslint-disable-next-line @typescript-eslint/no-unused-vars
 const Podcast = ({ setIsLoading }: PodcastInterface): JSX.Element => {
