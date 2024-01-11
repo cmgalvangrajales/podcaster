@@ -2,7 +2,7 @@ import { render, screen } from '@config/tests/utils';
 
 import Header from '../index';
 
-const defaultComponent = <Header />;
+const defaultComponent = <Header setIsLoading={() => {}} />;
 
 describe('<Header />', () => {
   test('Home button exists', () => {
@@ -20,7 +20,7 @@ describe('<Header />', () => {
   });
 
   test('Spinner shows up when isLoading', () => {
-    render(<Header isLoading />);
+    render(<Header isLoading setIsLoading={() => {}} />);
     const spinnerItem = screen.getByTestId('spinner');
 
     expect(spinnerItem).toBeInTheDocument();
