@@ -10,7 +10,7 @@ type FilterType = {
   handleFilterChange: (value: string | undefined) => void;
 };
 
-const SearchFilter = ({ filteredPodcasts, handleFilterChange }: FilterType) => {
+const SearchFilter = ({ filteredPodcasts, handleFilterChange }: FilterType): JSX.Element => {
   const intl = useIntl();
   const inputRef = useRef<HTMLInputElement>(null);
 

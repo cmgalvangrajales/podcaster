@@ -1,4 +1,4 @@
-const SpinnerBall = () => {
+const SpinnerBall = (): JSX.Element => {
   return (
     <div className="relative h-3 w-3 flex" data-testid="spinner">
       <span className="relative inline-flex rounded-full h-3 w-3 bg-primary"></span>
