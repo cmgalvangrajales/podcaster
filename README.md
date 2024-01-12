@@ -1,6 +1,6 @@
 # PODCASTER
 
-## v0.6.3
+## v1.0.0
 
 Poject seed
 
@@ -26,22 +26,22 @@ See **Deployment** to know how to deploy the project.
         #!shell
         git clone https://github.com/cmgalvangrajales/podcaster.git
 
-1.  Go to the project folder:
+2.  Go to the project folder:
 
         #!shell
         cd podcaster
 
-1.  Node version:
+3.  Node version:
 
         #!shell
         nvm use // if you are using node versions, else, be sure to use Node version 20.10.x
 
-1.  Install dependencies:
+4.  Install dependencies:
 
         #!shell
         npm install
 
-1.  Run the project:
+5.  Run the project:
 
         #!shell
         npm run dev
@@ -65,6 +65,13 @@ npm run test:coverage // this will include coverage
 ```shell
 npm run format:fix // Validate and fix code structure and guidelines
 npm run format:check // Validate code structure and guidelines
+npm run lint // EsLint Validation
+```
+
+### Dist build 🔧
+
+```shell
+npm run build:prod // Generates the project build
 ```
 
 ## Built with 🛠️

@@ -4,7 +4,7 @@ import * as mock from '@services/Podcast/mocks/podcast.json';
 
 import Table from '../index';
 
-const defaultComponent = <Table episodes={mock.episodes} podcastId={mock.id} />;
+const defaultComponent = <Table episodes={mock.episodes} podcastId={mock.id} setIsLoading={() => {}} />;
 
 describe('<Table />', () => {
   test('Episodes table exists', async () => {
