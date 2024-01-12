@@ -7,6 +7,8 @@ export enum Variants {
   Base112 = 'Base112',
   Base110 = 'Base110',
   Base108 = 'Base108',
+  Base210 = 'Base210',
+  Base215 = 'Base215',
 }
 
 export enum Colors {
