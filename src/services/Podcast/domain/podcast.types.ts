@@ -35,3 +35,24 @@ export interface podcastEndpointInterface {
   resultCount: number;
   results: podcastInterface[];
 }
+
+export interface episodeInterface {
+  trackName: string;
+  releaseDate: string;
+  trackTimeMillis: number;
+  trackId: number;
+  trackDescription: string;
+  trackUrl: string;
+}
+
+export interface podcastDetailInterface {
+  id: number;
+  title: string;
+  description: string;
+  artworkUrl30: string;
+  artworkUrl60: string;
+  artworkUrl100: string;
+  artworkUrl600: string;
+  artistName: string;
+  episodes: episodeInterface[];
+}
