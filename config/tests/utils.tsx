@@ -5,16 +5,21 @@
 /* eslint-disable import/named */
 import { RenderOptions, render } from '@testing-library/react';
 import { ReactElement } from 'react';
+import { QueryClient, QueryClientProvider } from 'react-query';
 import { BrowserRouter } from 'react-router-dom';
 
 import { LanguageProvider } from '@contexts/LanguageContext';
 import { AppThemeProvider } from '@contexts/ThemeContext';
 
+const queryClient = new QueryClient();
+
 const AllTheProviders = ({ children }) => {
   return (
     <LanguageProvider>
       <BrowserRouter>
-        <AppThemeProvider>{children}</AppThemeProvider>
+        <AppThemeProvider>
+          <QueryClientProvider client={queryClient}>{children}</QueryClientProvider>
+        </AppThemeProvider>
       </BrowserRouter>
     </LanguageProvider>
   );

@@ -2,5 +2,7 @@
   "containers.ComingSoon.title": "COMING SOON",
   "containers.Header.title": "Podcaster",
   "containers.NotFound.title": "Page not found",
-  "containers.NotFound.description": "Sorry, we couldn’t find the page you’re looking for."
+  "containers.NotFound.description": "Sorry, we couldn’t find the page you’re looking for.",
+  "containers.Home.notFound": "Items not found",
+  "containers.Home.filterPlaceholder": "Filter Podcasts..."
 }
