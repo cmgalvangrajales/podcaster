@@ -20,7 +20,6 @@ const Podcast = ({ setIsLoading }: PodcastInterface): JSX.Element => {
         title={mock.title}
         author={mock.artistName}
         description={mock.description}
-        podcastId={mock.id}
         setIsLoading={setIsLoading}
       />
       <div className="flex flex-col gap-y-5">
