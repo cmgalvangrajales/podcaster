@@ -1,11 +1,11 @@
 import { render, screen } from '@config/tests/utils';
 
-import Home from '../index';
+import ItemsNotFound from '../index';
 
-const defaultComponent = <Home setIsLoading={() => {}} />;
+const defaultComponent = <ItemsNotFound />;
 
-describe('<Home />', () => {
-  test('Podcasts shows empty message', () => {
+describe('<ItemsNotFound />', () => {
+  test('ItemsNotFound shows empty message', () => {
     render(defaultComponent);
     const podcastContainer = screen.getByText('Items not found');
 

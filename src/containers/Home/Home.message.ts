@@ -6,4 +6,7 @@ export default defineMessages({
   notFound: {
     id: `${prefix}.notFound`,
   },
+  filterPlaceholder: {
+    id: `${prefix}.filterPlaceholder`,
+  },
 });
