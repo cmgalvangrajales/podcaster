@@ -56,6 +56,20 @@ export const theme: AppThemeInterface = {
       letterSpacing: 'normal',
       fontWeight: '400',
     },
+    Base210: {
+      fontFamily: 'Source Sans Pro Bold',
+      fontSize: '1rem',
+      lineHeight: '1rem',
+      letterSpacing: 'normal',
+      fontWeight: '600',
+    },
+    Base215: {
+      fontFamily: 'Source Sans Pro Bold',
+      fontSize: '1.5rem',
+      lineHeight: '1rem',
+      letterSpacing: 'normal',
+      fontWeight: '600',
+    },
     Base108: {
       fontFamily: 'Source Sans Pro Bold',
       fontSize: '0.8rem',
