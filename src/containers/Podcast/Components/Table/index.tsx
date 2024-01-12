@@ -9,9 +9,10 @@ import message from '../../Podcast.message';
 type tableType = {
   episodes: episodeInterface[];
   podcastId: number;
+  setIsLoading: (isLoading: boolean) => void;
 };
 
-const Table = ({ episodes, podcastId }: tableType): JSX.Element => {
+const Table = ({ episodes, podcastId, setIsLoading }: tableType): JSX.Element => {
   const intl = useIntl();
   const timestamp = dayjs();
 
@@ -20,6 +21,7 @@ const Table = ({ episodes, podcastId }: tableType): JSX.Element => {
       <tr key={episode.trackId} className="odd:bg-white even:bg-slate-50">
         <td className="block max-w-lg">
           <Link
+            onClick={() => setIsLoading(true)}
             to={`/podcast/${podcastId}/episode/${episode.trackId}`}
             className="text-sky-700 block hover:text-sky-400 whitespace-nowrap w-full overflow-hidden text-ellipsis"
           >
