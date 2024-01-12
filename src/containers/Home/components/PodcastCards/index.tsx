@@ -12,7 +12,7 @@ type CardType = {
   setIsLoading: (isLoading: boolean) => void;
 };
 
-const CardContainer = ({ podcasts, setIsLoading }: CardType) => {
+const CardContainer = ({ podcasts, setIsLoading }: CardType): JSX.Element => {
   const navigate = useNavigate();
 
   const cardGenerator = useCallback(

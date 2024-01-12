@@ -29,7 +29,7 @@ const Episode = ({ setIsLoading, mockedEpisode }: EpisodeInterface): React.React
   }
 
   return (
-    <div className="grid grid-cols-1 sm:grid-cols-[auto_1fr] gap-5 pt-5">
+    <div className="grid grid-cols-1 sm:grid-cols-[auto_1fr] gap-5 pt-5 max-w-screen-2xl m-auto">
       <PodcastSidebar
         image={mock.artworkUrl600}
         title={mock.title}

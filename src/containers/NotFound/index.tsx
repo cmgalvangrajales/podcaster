@@ -4,7 +4,7 @@ import Typography, { Colors, Variants } from '@components/commons/Typography';
 
 import message from './NotFound.message';
 
-const NotFound = () => {
+const NotFound = (): JSX.Element => {
   return (
     <div className="overflow-hidden flex flex-1 items-center justify-center flex-col gap-2 h-full">
       <Typography variant={Variants.Base225} style={{ textAlign: 'center' }} color={Colors.Blue400}>

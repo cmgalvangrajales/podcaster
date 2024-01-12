@@ -10,7 +10,7 @@ import Podcast from '@pages/Podcast';
 import { Content, Header } from '@components/layout';
 
 const App = () => {
-  const [isLoading, setIsLoading] = useState(true);
+  const [isLoading, setIsLoading] = useState<boolean>(true);
   const location = useLocation();
 
   useEffect(() => {
