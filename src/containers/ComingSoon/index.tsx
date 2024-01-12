@@ -9,7 +9,7 @@ import Typography, { Variants } from '@components/commons/Typography';
 import message from './ComingSoon.message';
 import viteLogo from '/vite.svg';
 
-const ComingSoon = () => {
+const ComingSoon = (): JSX.Element => {
   return (
     <div className="bg-gray-300 h-screen overflow-hidden flex items-center justify-center flex-col gap-5">
       <Typography variant={Variants.Base225} style={{ textAlign: 'center' }}>
