@@ -30,7 +30,7 @@ const Podcast = ({ setIsLoading }: PodcastInterface): JSX.Element => {
         </div>
         {mock.episodes.length && (
           <div className="p-3 round shadow">
-            <Table episodes={mock.episodes} podcastId={mock.id} />
+            <Table episodes={mock.episodes} podcastId={mock.id} setIsLoading={setIsLoading} />
           </div>
         )}
       </div>
