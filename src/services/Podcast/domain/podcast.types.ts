@@ -1,58 +1,61 @@
-export interface podcastInterface {
-  wrapperType: string;
-  kind: string;
+interface genresInterface {
+  name: string;
+  id: string;
+}
+
+export interface basicPodcastEntry {
   collectionId: number;
-  trackId: number;
-  artistName: string;
   collectionName: string;
-  trackName: string;
-  collectionCensoredName: string;
-  trackCensoredName: string;
+  artistViewUrl: string;
   collectionViewUrl: string;
   feedUrl: string;
-  trackViewUrl: string;
+  country: string;
+}
+
+export interface podcastEntryInterface extends basicPodcastEntry {
+  artistId: number;
+  artistName: string;
+  collectionCensoredName: string;
+  trackCensoredName: string;
   artworkUrl30: string;
   artworkUrl60: string;
   artworkUrl100: string;
   collectionPrice: number;
   trackPrice: number;
   collectionHdPrice: number;
-  releaseDate: string;
   collectionExplicitness: string;
   trackExplicitness: string;
   trackCount: number;
-  trackTimeMillis: number;
-  country: string;
   currency: string;
   primaryGenreName: string;
+  genreIds: string[];
+}
+
+export interface episodeInterface extends basicPodcastEntry {
+  wrapperType: string;
+  kind: string;
+  trackId: number;
+  trackName: string;
+  trackViewUrl: string;
+  releaseDate: string;
+  trackTimeMillis: number;
   contentAdvisoryRating: string;
   artworkUrl600: string;
-  genreIds: string[];
-  genres: string[];
+  genres: genresInterface[];
+  closedCaptioning: string;
+  episodeFileExtension: string;
+  artistViewUrl: string;
+  episodeGuid: string;
+  shortDescription: string;
+  description: string;
+  artworkUrl160: string;
+  episodeContentType: string;
+  artistIds: number[];
+  previewUrl: string;
+  episodeUrl: string;
 }
 
 export interface podcastEndpointInterface {
   resultCount: number;
-  results: podcastInterface[];
-}
-
-export interface episodeInterface {
-  trackName: string;
-  releaseDate: string;
-  trackTimeMillis: number;
-  trackId: number;
-  trackDescription: string;
-  trackUrl: string;
-}
-
-export interface podcastDetailInterface {
-  id: number;
-  title: string;
-  description: string;
-  artworkUrl30: string;
-  artworkUrl60: string;
-  artworkUrl100: string;
-  artworkUrl600: string;
-  artistName: string;
-  episodes: episodeInterface[];
+  results: [podcastEntryInterface, ...Array<episodeInterface>];
 }

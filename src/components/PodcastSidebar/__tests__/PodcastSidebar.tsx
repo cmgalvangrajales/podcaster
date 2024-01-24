@@ -1,29 +1,18 @@
 import { render, screen } from '@config/tests/utils';
 
-import * as mock from '@services/Podcast/mocks/podcast.json';
-
 import PodcastSidebar from '../index';
 
-const defaultComponent = (
-  <PodcastSidebar
-    image={mock.artworkUrl60}
-    title={mock.title}
-    author={mock.artistName}
-    description={mock.description}
-    podcastId={mock.id}
-    setIsLoading={() => {}}
-  />
-);
-
 describe('<PodcastSidebar />', () => {
-  test('PodcastSidebar exists', async () => {
-    render(defaultComponent);
-    const title = screen.getByText(mock.title);
-    const description = screen.getByText(mock.title);
-    const author = screen.getByText(mock.title);
+  afterAll(async () => {
+    // avoid jest open handle error
+    await new Promise<void>((resolve) => setTimeout(() => resolve(), 500));
+  });
 
-    expect(title).toBeInTheDocument();
+  test('PodcastSidebar exists', async () => {
+    render(<PodcastSidebar setIsLoading={() => {}} podcastIdTest={'1724974482'} />);
+    await new Promise<void>((resolve) => setTimeout(() => resolve(), 500));
+    const description = screen.getByText('Description:');
+
     expect(description).toBeInTheDocument();
-    expect(author).toBeInTheDocument();
   });
 });

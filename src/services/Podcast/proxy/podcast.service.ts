@@ -8,6 +8,6 @@ import { podcastEndpointInterface } from '../domain/podcast.types';
  */
 export function getPodcast(podcastId): Promise<podcastEndpointInterface> {
   return get({
-    servicePath: `${env.podcastDetail}${podcastId}`,
+    servicePath: `${env.podcastDetail}${podcastId}&media=podcast&entity=podcastEpisode&limit=200`,
   });
 }
