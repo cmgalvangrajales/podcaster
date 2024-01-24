@@ -1,4 +1,4 @@
-import { useEffect, useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import { useQuery } from 'react-query';
 
 import PodcastsService, { podcastInterface } from '@services/Podcasts';
@@ -8,8 +8,8 @@ import ItemsNotFound from './components/ItemsNotFound';
 import PodcastCards from './components/PodcastCards';
 import PodcastFilter from './components/PodcastFilter';
 
-const Home = ({ setIsLoading }: HomeType): JSX.Element => {
-  const [filteredPodcasts, setFilteredPodcasts] = useState<podcastInterface[]>([]);
+const Home = ({ setIsLoading }: HomeType): React.ReactNode => {
+  const [filteredPodcasts, setFilteredPodcasts] = useState<podcastInterface[]>();
 
   const getPodcasts = async () => {
     const data = await PodcastsService.getPodcasts();
@@ -26,6 +26,10 @@ const Home = ({ setIsLoading }: HomeType): JSX.Element => {
       setFilteredPodcasts(data);
     }
   }, [data, setFilteredPodcasts]);
+
+  if (isLoading || !filteredPodcasts) {
+    return null;
+  }
 
   if ((!isLoading && isError) || !data) {
     console.error('getPodcasts error', error);
