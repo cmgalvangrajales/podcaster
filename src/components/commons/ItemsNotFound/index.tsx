@@ -2,7 +2,7 @@ import { FormattedMessage } from 'react-intl';
 
 import Typography, { Variants } from '@components/commons/Typography';
 
-import message from '../../Home.message';
+import message from '../../../containers/Home/Home.message';
 
 const ItemsNotFound = (): JSX.Element => {
   return (

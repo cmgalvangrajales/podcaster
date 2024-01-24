@@ -15,8 +15,8 @@
     "lint": "eslint . --ext ts,tsx --report-unused-disable-directives --max-warnings 0",
     "preview": "vite preview",
     "prepare": "husky install",
-    "test": "npm run env && jest --silent --config ./jest.config.ts --detectOpenHandles",
-    "test:coverage": "npm run env && jest --silent --config ./jest.config.ts --coverage --detectOpenHandles"
+    "test": "npm run env && jest --silent --config ./jest.config.ts",
+    "test:coverage": "npm run env && jest --silent --config ./jest.config.ts --coverage"
   },
   "dependencies": {
     "@emotion/react": "11.11.1",

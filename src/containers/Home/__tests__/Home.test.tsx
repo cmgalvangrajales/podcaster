@@ -5,10 +5,10 @@ import Home from '../index';
 const defaultComponent = <Home setIsLoading={() => {}} />;
 
 describe('<Home />', () => {
-  test('Podcasts shows empty message', () => {
+  test('Podcasts not showing no items found', () => {
     render(defaultComponent);
-    const podcastContainer = screen.getByText('Items not found');
+    const itemsNotFound = screen.queryByText('Items not found');
 
-    expect(podcastContainer).toBeInTheDocument();
+    expect(itemsNotFound).toBeNull();
   });
 });

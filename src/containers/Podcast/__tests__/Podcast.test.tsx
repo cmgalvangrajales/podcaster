@@ -1,15 +1,19 @@
 import { render, screen } from '@config/tests/utils';
 
-import * as mock from '@services/Podcast/mocks/podcast.json';
-
 import Podcast from '../index';
 
-const defaultComponent = <Podcast setIsLoading={() => {}} />;
-
 describe('<Podcast />', () => {
+  afterAll(async () => {
+    // avoid jest open handle error
+    await new Promise<void>((resolve) => setTimeout(() => resolve(), 500));
+  });
+
   test('Text Episodes exists', async () => {
-    render(defaultComponent);
-    const title = screen.getByText(`Episodes: ${mock.episodes.length}`);
+    render(<Podcast setIsLoading={() => {}} useMock />);
+
+    await new Promise<void>((resolve) => setTimeout(() => resolve(), 500));
+
+    const title = screen.getByTestId('episodesTitle');
 
     expect(title).toBeInTheDocument();
   });

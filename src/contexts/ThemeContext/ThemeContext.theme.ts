@@ -66,7 +66,7 @@ export const theme: AppThemeInterface = {
     Base215: {
       fontFamily: 'Source Sans Pro Bold',
       fontSize: '1.5rem',
-      lineHeight: '1rem',
+      lineHeight: '1.5rem',
       letterSpacing: 'normal',
       fontWeight: '600',
     },
