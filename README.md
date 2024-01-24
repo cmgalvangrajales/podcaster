@@ -1,6 +1,6 @@
 # PODCASTER
 
-## v1.0.4
+## v1.1.0
 
 Poject seed
 

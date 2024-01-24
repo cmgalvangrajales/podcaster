@@ -3,8 +3,9 @@ import { useQuery } from 'react-query';
 
 import PodcastsService, { podcastInterface } from '@services/Podcasts';
 
+import ItemsNotFound from '@components/commons/ItemsNotFound';
+
 import { HomeType } from './Home.types';
-import ItemsNotFound from './components/ItemsNotFound';
 import PodcastCards from './components/PodcastCards';
 import PodcastFilter from './components/PodcastFilter';
 

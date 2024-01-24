@@ -1,4 +1,5 @@
 import dayjs from 'dayjs';
+import React from 'react';
 import { useIntl } from 'react-intl';
 import { Link } from 'react-router-dom';
 
@@ -8,28 +9,31 @@ import message from '../../Podcast.message';
 
 type tableType = {
   episodes: episodeInterface[];
-  podcastId: number;
   setIsLoading: (isLoading: boolean) => void;
 };
 
-const Table = ({ episodes, podcastId, setIsLoading }: tableType): JSX.Element => {
+const Table = ({ episodes, setIsLoading }: tableType): React.ReactNode => {
   const intl = useIntl();
   const timestamp = dayjs();
 
+  if (!episodes) {
+    return null;
+  }
+
   const getRows = (episodes) => {
-    return episodes.map((episode) => (
-      <tr key={episode.trackId} className="odd:bg-white even:bg-slate-50">
+    return episodes.map(({ trackId, trackName, releaseDate, trackTimeMillis, collectionId }) => (
+      <tr key={trackId} className="odd:bg-white even:bg-slate-50">
         <td className="block max-w-lg">
           <Link
             onClick={() => setIsLoading(true)}
-            to={`/podcast/${podcastId}/episode/${episode.trackId}`}
+            to={`/podcast/${collectionId}/episode/${trackId}`}
             className="text-sky-700 block hover:text-sky-400 whitespace-nowrap w-full overflow-hidden text-ellipsis"
           >
-            {episode.trackName}
+            {trackName}
           </Link>
         </td>
-        <td>{dayjs(episode.releaseDate).format('D/M/YYYY')}</td>
-        <td>{timestamp.add(episode.trackTimeMillis, 'millisecond').format('HH:mm:ss')}</td>
+        <td>{dayjs(releaseDate).format('D/M/YYYY')}</td>
+        <td>{timestamp.add(trackTimeMillis, 'millisecond').format('HH:mm:ss')}</td>
       </tr>
     ));
   };
